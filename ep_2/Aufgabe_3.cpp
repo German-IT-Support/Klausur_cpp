@@ -31,8 +31,8 @@ private:
     string ip_address;
     Router *gehortRouter;
     Festplatte *gehortFestplatte[8];
-    Grafikkarte grk[2];
     Prozessor cpu[2];
+    Grafikkarte grk[2];
 
 public:
 };

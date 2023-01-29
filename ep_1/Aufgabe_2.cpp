@@ -29,7 +29,7 @@ public:
     inline void setY(double b) { y = b; }
     inline void setZ(double c) { z = c; }
 
-    /* ========== FONCTIONS D'OBJET ================ */
+    /* ========== METHODES D'OBJET ================ */
 
     // Question c) Methodes permettant d'avoir la longueur d'un Vecteur
     double lange();

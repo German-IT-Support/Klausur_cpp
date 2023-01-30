@@ -30,13 +30,14 @@ public:
     float getUmfang();
 };
 
-// Question d) SUITE
-int Kreis::Zaehler = 0; // Initialisation de la variable de classe
-
+// Question c) SUITE
 float Kreis::getUmfang()
 {
     return 2 * M_PI * Radius;
 }
+
+// Question d) SUITE
+int Kreis::Zaehler = 0; // Initialisation de la variable de classe
 
 // Question e)
 Kreis operator/(Kreis kr, int x)
@@ -53,7 +54,7 @@ int main(int argc, char **argv)
 
     cout << "Kreis mit Radius " << k1.getRadius() << " hat Umfang " << k1.getUmfang() << endl;
     cout << "Kreis mit Radius " << k2.getRadius() << " hat Umfang " << k2.getUmfang() << endl;
-    // k3 = k2 / 3;
+    k3 = k2 / 3;
     cout << "k2/3 hat Radius " << k3.getRadius() << " und Umfang " << k3.getUmfang() << endl;
     cout << "Es gibt insgesamt " << Kreis::getZaehler() << " Kreise" << endl;
 

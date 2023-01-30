@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Question d)
 int ggt(int a, int b)
 {
     if (b == 0)
@@ -18,7 +19,7 @@ private:
 
 public:
     // Question b) Definition du constructeur
-    Bruch(int a = 0, int b = 1) : Zaehler(a), Nenner(b) {}
+    inline Bruch(int a = 0, int b = 1) : Zaehler(a), Nenner(b) {}
 
     // Question a) Definitions des Methodes Getters/Setters Inline
 
@@ -34,28 +35,22 @@ public:
 
     // Question c) Methodes permettant d'avoir la Fraction en nbre Reel
     double getDouble();
-
-    // Question d) Methodes premettant de simplifier une Fraction
-    Bruch operator~();
 };
 
+// Question c) SUITE
 double Bruch::getDouble()
 {
     return (double)Zaehler / Nenner;
 }
 
-Bruch Bruch::operator~()
+// Question d) Surcharge d'operateur (Simplification de Fraction)
+Bruch operator~(Bruch &bch)
 {
-    Bruch b;
-    int pgcd = ggt(Zaehler, Nenner);
+    int pgcd = ggt(bch.getZaehler(), bch.getNenner());
+    bch.setZaehler(bch.getZaehler() / pgcd);
+    bch.setNenner(bch.getNenner() / pgcd);
 
-    Zaehler = Zaehler / pgcd;
-    Nenner = Nenner / pgcd;
-
-    b.setZaehler(Zaehler);
-    b.setNenner(Nenner);
-
-    return b;
+    return bch;
 }
 
 int main(int argc, char **argv)

@@ -50,12 +50,14 @@ int main(int argc, char **argv)
 
     cout << "\n============== QUESTION 2 ================ \n\n";
 
-    long n[3] = {300, 200, 100};                     // tableau n de 3 nombres
-    long &r = n[0];                                  // Variable de ref r (alias sur n[0]) i.e on la meme adresse
-    long *p = &n[2];                                 // pointeur p pointe sur n[2]
-    n[1] = r / 2;                                    // n[1] = r/2 = n[0]/2 = 300/2 = 150
-    p = p - 1;                                       // i.e p pointe sur n[1]
-    r = *p + n[0];                                   // r = n[0] = 150 + 300 = 450
+    long n[3] = {300, 200, 100}; // tableau n de 3 nombres
+    long &r = n[0];              // Variable de ref r (alias sur n[0]) i.e on la meme adresse
+    long *p = &n[2];             // pointeur p pointe sur n[2]
+
+    n[1] = r / 2;  // n[1] = r/2 = n[0]/2 = 300/2 = 150
+    p = p - 1;     // i.e p qui pointait n[2] pointe sur n[1]
+    r = *p + n[0]; // r = n[0] = 150 + 300 = 450
+
     cout << n[0] << " " << n[1] << " " << r << endl; // n[0] = 450 | n[1] = 150 | r = 450
 
     return 0;

@@ -3,8 +3,6 @@
 
 using namespace std;
 
-// Question 1 - Definition de la classe Computer
-
 class Router;
 
 class Festplatte
@@ -25,11 +23,14 @@ private:
     float AnzahlKerne;
 };
 
+// Question 1 - Definition de la classe Computer
+
 class Computer
 {
 private:
     string ip_address;
     Router *gehortRouter;
+
     Festplatte *gehortFestplatte[8];
     Prozessor cpu[2];
     Grafikkarte grk[2];

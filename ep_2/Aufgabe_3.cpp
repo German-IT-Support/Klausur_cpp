@@ -29,11 +29,11 @@ class Computer
 {
 private:
     string ip_address;
-    Router *gehortRouter;
+    Router *gehortRouter; // association
 
-    Festplatte *gehortFestplatte[8];
-    Prozessor cpu[2];
-    Grafikkarte grk[2];
+    Festplatte *gehortFestplatte[8]; // association
+    Prozessor cpu[2];                // composition
+    Grafikkarte grk[2];              // composition
 
 public:
 };

@@ -32,9 +32,9 @@ private:
     string ip_address;
     Router *gehortRouter; // association
 
-    Festplatte *gehortFestplatte[8]; // association
-    Prozessor cpu[2];                // composition
-    Grafikkarte grk[2];              // composition
+    Festplatte *gehortFestplatte[4]; // association
+    Prozessor cpu[4];                // composition
+    Grafikkarte grk[1];              // composition
 
 public:
     string getIP() { return ip_address; }
@@ -46,13 +46,13 @@ public:
 class Router
 {
 private:
-    vector<Computer *> angeschlossen; // (a) - Utilisation conteneur STL
+    vector<Computer *> vermittelt; // (a) - Utilisation conteneur STL
 
 public:
     // (b) - Methode qui définit que le routeur est connecté à un ordinateur
     bool hatComputer()
     {
-        if (angeschlossen.empty())
+        if (vermittelt.empty())
             return false; // Lié à Aucun PC
         else
             return true; // Lié à au moins 1 PC
@@ -63,15 +63,9 @@ public:
     {
         if (hatComputer())
         {
-            for (int i(0); i < angeschlossen.size(); i++)
-                if (angeschlossen[i] != NULL)
-                    cout << "- " << angeschlossen[i]->getIP() << endl;
+            for (int i(0); i < vermittelt.size(); i++)
+                if (vermittelt[i] != NULL)
+                    cout << "- " << vermittelt[i]->getIP() << endl;
         }
     }
 };
-
-int main(int argc, char **argv)
-{
-
-    return 0;
-}

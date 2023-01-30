@@ -25,7 +25,7 @@ private:
     static float grundgebuehr;
 
 public:
-    Depotkonto(float ak, float prov, float grd);
+    Depotkonto(float ak, unsigned int knr) : Konto::Konto(knr), aktienwert(ak){};
     void dividendeGutschreiben();
 };
 

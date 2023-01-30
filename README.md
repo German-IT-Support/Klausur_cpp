@@ -1,4 +1,4 @@
-# Exam (Klausur) on C++ - Correction
+# Exam (Klausur) on C++ / Correction
 
 <img src="./.img/boy-study.gif" width="330" height="250" alt="boy-study"/>
 
